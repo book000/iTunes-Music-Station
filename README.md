@@ -2,8 +2,9 @@
 iTunesを遠隔で再生したり停止したり、次の曲に移動したり前の曲に戻ったりさせるヤツ。
 
 ## 使用言語
-PC側 C#  
+PC側(server) C#  
 クライアント側(Web) javascript
+
 
 ## 注意
 C#もjavascriptも全て無理やりです  
