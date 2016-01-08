@@ -1,0 +1,20 @@
+<?php
+header("Content-Type: text/html; charset=UTF-8");
+error_reporting(-1);
+ini_set( 'display_errors', 1 );
+$now = file_get_contents("now.txt");
+$music = file_get_contents("music.txt");
+$album = file_get_contents("album.txt");
+$artist = file_get_contents("artist.txt");
+$voice = file_get_contents("voice.txt");
+$music = mb_convert_encoding($music, "UTF-8", "auto");
+$album = mb_convert_encoding($album, "UTF-8", "auto");
+$artist = mb_convert_encoding($artist, "UTF-8", "auto");
+//echo $now."/".$music."/".$album."/".$artist;
+$now = str_replace(array("\r", "\n"), "", $now);
+$music = str_replace(array("\r", "\n"), "", $music);
+$album = str_replace(array("\r", "\n"), "", $album);
+$artist = str_replace(array("\r", "\n"), "", $artist);
+$array = array("now"=>$now,"music"=>$music,"album"=>$album,"artist"=>$artist,"voice"=>$voice);
+$json = json_encode($array);
+die($json);
